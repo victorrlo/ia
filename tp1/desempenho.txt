@@ -1,3 +1,7 @@
+PARÂMETROS USADOS:
+reactive_agent(1, 2, 1000, score)
+
+
 POSIÇÃO DO AGENTE:
 0 0 esquerda
 
