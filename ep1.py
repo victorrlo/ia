@@ -6,8 +6,8 @@ import time
 def reactive_agent(row_size, column_size, cells, elapsed_time, score):
     
     #posição do agente inicial desconhecida:
-    ini_row = 0#random.randint(0,row_size-1) 
-    ini_col = 1#random.randint(0,column_size-1)
+    ini_row = random.randint(0,row_size-1) 
+    ini_col = random.randint(0,column_size-1)
 
     #sensor do agente
     reactive_agent.sensor = cells[ini_row][ini_col]
@@ -20,6 +20,9 @@ def reactive_agent(row_size, column_size, cells, elapsed_time, score):
             random_dust = random.randint(0,1)
             if random_dust == 1:
                 cells[random.randint(0,row_size-1)][random.randint(0,column_size-1)] = 1
+            
+            #sensor
+            reactive_agent.sensor = cells[ini_row][ini_col]
 
             #estado inicial
             print("Ambiente")
@@ -27,10 +30,10 @@ def reactive_agent(row_size, column_size, cells, elapsed_time, score):
             
             #operação de limpeza
             if(reactive_agent.sensor == 0):
+                print("posição: ", ini_row, ini_col)
                 print("Célula limpa.")
                 print("Procurando nova célula para limpar...")
                 #time.sleep(5)
-                print(cells)
 
             elif(reactive_agent.sensor == 1):
                 print("Célula suja.")
@@ -101,9 +104,6 @@ elapsed_time = 1000
 
 #células do ambiente inicializadas
 cells = np.full((row_size, column_size), 0)
-
-cells[0][0] = 1
-cells[0][1] = 0
 
 #simulação
 score = reactive_agent(row_size, column_size, cells, elapsed_time, score)
