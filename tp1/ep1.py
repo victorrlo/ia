@@ -9,7 +9,7 @@ def reactive_agent(row_size, column_size, elapsed_time, score):
     
     #posição do agente inicial desconhecida:
     ini_row = random.randint(0,row_size-1) 
-    ini_col = random.randint(0,column_size-1)
+    ini_col = 0#random.randint(0,column_size-1)
     
     #células do ambiente inicializadas
     cells = np.full((row_size, column_size), 0)
@@ -55,20 +55,21 @@ def reactive_agent(row_size, column_size, elapsed_time, score):
                 print(cells)
             
             #operação de movimento
+            if(ini_col+1 == column_size):
+                    right = 0
+                    left = 1
+            elif(ini_col-1 < 0):
+                    left = 0
+                    right = 1
+            
             if(left == 0):
                 if(ini_col < column_size-1):
                     ini_col = ini_col+1
 
-                    if(ini_col+1 == column_size):
-                        right = 0
-                        left = 1
+                    
             elif(right == 0):
                 if(ini_col > 0):
                     ini_col = ini_col-1
-                    
-                    if(ini_col-1 < 0):
-                        left = 0
-                        right = 1
                 
                 
         print("-----------------------------------------------------------")
