@@ -1,0 +1,55 @@
+POSIÇÃO DO AGENTE:
+0 0 esquerda
+
+    estado inicial do ambiente: 
+    1 1 tudo sujo
+    score: 429
+
+    estado inicial do ambiente: 
+    0 0 tudo limpo
+    score: 448
+
+    estado inicial do ambiente: 
+    0 1 parcialmente sujo
+    score: 418
+
+    estado inicial do ambiente: 
+    1 0 parcialmente sujo
+    score: 445
+
+média 00: 429+448+418+445 = 435
+
+POSIÇÃO DO AGENTE: 
+0 1 direita
+
+    estado inicial do ambiente: 
+    1 1 tudo sujo
+    score: 430
+
+    estado inicial do ambiente: 
+    0 0 tudo limpo
+    score: 430
+
+    estado inicial do ambiente: 
+    0 1 parcialmente sujo
+    score: 450
+
+    estado inicial do ambiente: 
+    1 0 parcialmente sujo
+    score: 420
+
+média 01: 430+430+450+420 = 432,5
+
+MÉDIA GLOBAL = 433,75
+
+Parâmetros de posição inicial e sujeira inicial aleatórios:
+1a simulação: 428
+2a simulação: 463
+3a simulação: 456
+4a simulação: 433
+5a simulação: 447
+6a simulação: 440
+7a simulação: 436
+8a simulação: 457
+
+MÉDIA: 445
