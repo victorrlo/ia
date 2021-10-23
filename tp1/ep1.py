@@ -9,7 +9,7 @@ def reactive_agent(row_size, column_size, elapsed_time, score):
     
     #posição do agente inicial desconhecida:
     ini_row = random.randint(0,row_size-1) 
-    ini_col = 0#random.randint(0,column_size-1)
+    ini_col = random.randint(0,column_size-1)
     
     #células do ambiente inicializadas
     cells = np.full((row_size, column_size), 0)
@@ -25,6 +25,12 @@ def reactive_agent(row_size, column_size, elapsed_time, score):
             random_dust = random.randint(0,1)
             if random_dust == 1:
                 cells[random.randint(0,row_size-1)][random.randint(0,column_size-1)] = 1
+                
+            #testar se sempre limpa quando está sujo
+            
+            #for j in range(0, column_size):
+                #cells[0][j] = 1
+                #print("Sujeira", cells)
             
             #sensor
             reactive_agent.sensor = cells[ini_row][ini_col]
@@ -72,10 +78,11 @@ def reactive_agent(row_size, column_size, elapsed_time, score):
                     ini_col = ini_col-1
                 
                 
-        print("-----------------------------------------------------------")
+            print("-----------------------------------------------------------")
     else:
         print("ERRO! Ambiente 3D! Projeto conta apenas com ambiente 2D!")
         
+    
     return score
     
                             
